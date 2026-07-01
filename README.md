@@ -36,6 +36,18 @@ claude/
   settings.json        # Permissions, hooks, plugins, voice settings
   hooks/
     open-worktree-in-cursor.sh  # Opens worktree in Cursor after creation
+  skills/
+    check-cdk-deployment/      # Check AWS CodePipeline deploy status
+```
+
+Most Claude skills (jira, drupal-query, codex, email-inbox, etc.) live in
+[RealtyMogul/claude-skills](https://github.com/RealtyMogul/claude-skills) and are
+symlinked into `~/.claude/skills/`. To set those up:
+
+```bash
+git clone https://github.com/RealtyMogul/claude-skills.git ~/claude-skills
+cd ~/claude-skills && ./setup.sh   # or manually symlink:
+# ln -s ~/claude-skills/skills/* ~/.claude/skills/
 ```
 
 ## Key Preferences
@@ -59,6 +71,7 @@ cp ~/.gitconfig git/gitconfig
 cp ~/.tmux.conf terminal/tmux.conf
 cp ~/.claude/settings.json claude/settings.json
 cp ~/.claude/hooks/* claude/hooks/
+cp -R ~/.claude/skills/* claude/skills/
 
 git add -A && git commit -m "Update settings" && git push
 ```

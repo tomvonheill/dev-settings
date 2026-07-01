@@ -70,6 +70,21 @@ if command -v claude >/dev/null 2>&1; then
     cp "$SCRIPT_DIR/claude/hooks/"* "$CLAUDE_DIR/hooks/"
     chmod +x "$CLAUDE_DIR/hooks/"*
     echo "  Installed hooks to $CLAUDE_DIR/hooks/"
+    cp -R "$SCRIPT_DIR/claude/skills/"* "$CLAUDE_DIR/skills/" 2>/dev/null || true
+    echo "  Installed local skills to $CLAUDE_DIR/skills/"
+
+    # Shared skills from RealtyMogul/claude-skills (symlinked)
+    if [ -d "$HOME/claude-skills/skills" ]; then
+        for skill in "$HOME/claude-skills/skills/"*/; do
+            name=$(basename "$skill")
+            if [ ! -e "$CLAUDE_DIR/skills/$name" ]; then
+                ln -s "$skill" "$CLAUDE_DIR/skills/$name"
+                echo "  Linked skill: $name"
+            fi
+        done
+    else
+        echo "  Note: clone https://github.com/RealtyMogul/claude-skills into ~/claude-skills for shared skills"
+    fi
 else
     echo ""
     echo "Claude Code not found — skipping. Install it, then re-run."
