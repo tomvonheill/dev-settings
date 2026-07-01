@@ -60,6 +60,21 @@ else
     echo "Cursor not found — skipping. Install Cursor, then re-run."
 fi
 
+# Claude Code settings
+CLAUDE_DIR="$HOME/.claude"
+if command -v claude >/dev/null 2>&1; then
+    echo ""
+    echo "Installing Claude Code settings..."
+    mkdir -p "$CLAUDE_DIR/hooks"
+    link_file "$SCRIPT_DIR/claude/settings.json" "$CLAUDE_DIR/settings.json"
+    cp "$SCRIPT_DIR/claude/hooks/"* "$CLAUDE_DIR/hooks/"
+    chmod +x "$CLAUDE_DIR/hooks/"*
+    echo "  Installed hooks to $CLAUDE_DIR/hooks/"
+else
+    echo ""
+    echo "Claude Code not found — skipping. Install it, then re-run."
+fi
+
 # NVM + Node
 export NVM_DIR="$HOME/.nvm"
 mkdir -p "$NVM_DIR"

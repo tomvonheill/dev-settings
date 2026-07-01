@@ -32,6 +32,10 @@ git/
   gitconfig            # Git user, aliases, credential helpers
 terminal/
   tmux.conf            # tmux config (mouse, vi-keys, Claude hook)
+claude/
+  settings.json        # Permissions, hooks, plugins, voice settings
+  hooks/
+    open-worktree-in-cursor.sh  # Opens worktree in Cursor after creation
 ```
 
 ## Key Preferences
@@ -53,6 +57,8 @@ cp ~/.zshrc shell/zshrc        # review for secrets first!
 cp ~/.vimrc shell/vimrc
 cp ~/.gitconfig git/gitconfig
 cp ~/.tmux.conf terminal/tmux.conf
+cp ~/.claude/settings.json claude/settings.json
+cp ~/.claude/hooks/* claude/hooks/
 
 git add -A && git commit -m "Update settings" && git push
 ```

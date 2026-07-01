@@ -1,0 +1,114 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Bash(aws * describe-*)",
+      "Bash(aws * list-*)",
+      "Bash(aws * get-*)",
+      "Bash(aws s3 ls *)",
+      "Bash(aws * admin-get-*)",
+      "Bash(aws * admin-list-*)",
+      "Read(~/**)",
+      "Read(/Users/thomasheill/**)",
+      "Edit(/Users/thomasheill/repos/**)",
+      "Write(/Users/thomasheill/repos/**)",
+      "Edit(/Users/thomasheill/code/**)",
+      "Write(/Users/thomasheill/code/**)",
+      "Edit(~/repos/**)",
+      "Write(~/repos/**)",
+      "Edit(~/code/**)",
+      "Write(~/code/**)",
+      "WebFetch",
+      "Task",
+      "Read(/Users/thomasheill/.claude/**)",
+      "Edit(/Users/thomasheill/.claude/**)",
+      "Write(/Users/thomasheill/.claude/**)",
+      "Read(~/.claude/**)",
+      "Edit(~/.claude/**)",
+      "Write(~/.claude/**)"
+    ],
+    "deny": [
+      "Bash(aws * create-*)",
+      "Bash(aws * delete-*)",
+      "Bash(aws * remove-*)",
+      "Bash(aws * update-*)",
+      "Bash(aws * put-*)",
+      "Bash(aws * modify-*)",
+      "Bash(aws * start-*)",
+      "Bash(aws * stop-*)",
+      "Bash(aws * terminate-*)",
+      "Bash(aws * reboot-*)",
+      "Bash(aws * enable-*)",
+      "Bash(aws * disable-*)",
+      "Bash(aws * attach-*)",
+      "Bash(aws * detach-*)",
+      "Bash(aws * add-*)",
+      "Bash(aws * set-*)",
+      "Bash(aws * register-*)",
+      "Bash(aws * deregister-*)",
+      "Bash(aws * invoke*)",
+      "Bash(aws * publish*)",
+      "Bash(aws * send-*)",
+      "Bash(aws * run-*)",
+      "Bash(aws * execute-*)",
+      "Bash(aws * admin-create-*)",
+      "Bash(aws * admin-delete-*)",
+      "Bash(aws * admin-update-*)",
+      "Bash(aws * admin-set-*)",
+      "Bash(aws * admin-enable-*)",
+      "Bash(aws * admin-disable-*)",
+      "Bash(aws * admin-reset-*)",
+      "Bash(aws * admin-initiate-*)",
+      "Bash(aws * admin-respond-*)",
+      "Bash(aws * admin-confirm-*)",
+      "Bash(aws * admin-forget-*)",
+      "Bash(aws * admin-link-*)",
+      "Bash(aws * admin-add-*)",
+      "Bash(aws * admin-remove-*)",
+      "Bash(aws s3 cp *)",
+      "Bash(aws s3 mv *)",
+      "Bash(aws s3 rm *)",
+      "Bash(aws s3 sync *)",
+      "Bash(aws s3 mb *)",
+      "Bash(aws s3 rb *)",
+      "Bash(rm -rf *)",
+      "Bash(sudo *)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "claude-notify"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "EnterWorktree",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/open-worktree-in-cursor.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "swift-lsp@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
+  },
+  "effortLevel": "high",
+  "voiceEnabled": true,
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
+  "skipDangerousModePermissionPrompt": true
+}
