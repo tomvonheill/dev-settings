@@ -1,0 +1,215 @@
+{
+    "aws.samcli.location": "/opt/homebrew/bin/sam",
+    "git.confirmSync": false,
+    "notebook.output.wordWrap": true,
+    "editor.suggest.showMethods": true,
+    "editor.suggest.preview": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.snippetSuggestions": "top",
+    "editor.autoClosingQuotes": "never",
+    "editor.autoClosingBrackets": "never",
+    "editor.autoSurround": "never",
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "yaml.customTags": [
+        "!And",
+        "!And sequence",
+        "!If",
+        "!If sequence",
+        "!Not",
+        "!Not sequence",
+        "!Equals",
+        "!Equals sequence",
+        "!Or",
+        "!Or sequence",
+        "!FindInMap",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Join",
+        "!Join sequence",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!Sub sequence",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!ImportValue sequence",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Split sequence"
+    ],
+    "redhat.telemetry.enabled": true,
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "diffEditor.hideUnchangedRegions.enabled": true
+    },
+    "editor.inlineSuggest.enabled": true,
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1",
+        "CW_NEW_SESSION": "1",
+        "Q_NEW_SESSION": "1"
+    },
+    "editor.accessibilitySupport": "off",
+    "launch": {
+        "configurations": [],
+        "compounds": []
+    },
+    "window.title": "${rootName}${separator}${activeEditorShort}",
+    "github.copilot.advanced": {},
+    "window.zoomLevel": 1,
+    "editor.lineNumbers": "relative",
+    "vim.leader": "<Space>",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<Enter>"
+            ],
+            "after": [
+                "o",
+                "<ESC>",
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "<S-Enter>"
+            ],
+            "after": [
+                "O",
+                "<ESC>",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "<C-u>"
+            ],
+            "after": [
+                "<C-u>",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "<C-d>"
+            ],
+            "after": [
+                "<C-d>",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "<S-h>"
+            ],
+            "commands": [
+                ":bprevious"
+            ]
+        },
+        {
+            "before": [
+                "<S-l>"
+            ],
+            "commands": [
+                ":bnext"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "v"
+            ],
+            "commands": [
+                ":vsplit"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.focusLeftGroup"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.focusRightGroup"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "f"
+            ],
+            "command": [
+                "revealInExplorer"
+            ]
+        }
+    ],
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "i18n-ally.extract.autoDetect": true,
+    "gitlens.changes.locations": [
+        "line",
+        "overview",
+        "gutter"
+    ],
+    "git.autofetch": true,
+    "git.path": "/Library/Developer/CommandLineTools/usr/libexec/git-core",
+    "go.toolsManagement.autoUpdate": true,
+    "github.copilot.editor.enableAutoCompletions": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "workbench.colorTheme": "Default Dark Modern",
+    "svg.preview.mode": "svg",
+    "plpgsqlLanguageServer.database": "your_database_name",
+    "plpgsqlLanguageServer.user": "your_database_user",
+    "plpgsqlLanguageServer.password": "your_database_password",
+    "plpgsqlLanguageServer.definitionFiles": [
+      // Support glob.
+      "**/*.sql",
+      "**/*.psql",
+      "**/*.pgsql"
+    ],
+    // The supported extention types are ['*.pgsql', '*.psql'].
+    // If you want to use this extension in '*.sql', add the following settings.
+    "files.associations": {
+      "*.sql": "postgres",
+      "*.module": "php",
+      "*.install": "php",
+      "*.inc": "php",
+      "*.theme": "php",
+      "*.profile": "php"
+    },
+    "debug.javascript.autoAttachFilter": "always",
+    "python.languageServer": "None",
+    "workbench.editor.enablePreviewFromCodeNavigation": true,
+    "typescript.tsserver.log": "verbose",
+    "workbench.editor.wrapTabs": true,
+    "window.autoDetectColorScheme": false
+}
