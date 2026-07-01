@@ -1,0 +1,20 @@
+[user]
+	name = Thomas Von Heill
+	email = tomvonheill@gmail.com
+[push]
+	autoSetupRemote = true
+[merge]
+	ff = true
+[alias]
+	# Show modified files in last commit
+	files = show --pretty="" --name-only
+	# Find commits by commit message
+	find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
+[pager]
+	tag = false
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
